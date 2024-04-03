@@ -21,6 +21,14 @@ app.use(
 );
 
 //ROUTER CONFIGURATIONS
+app.get("/", (req, res) => {
+  res.json({
+    status: 200,
+    messege: "server is running",
+    id: "739hfhii902hn3u2022",
+    app_name: "pinkpulse",
+  });
+});
 app.use("/api/v0/user", userRouter);
 app.use("/api/v0/periods", periodRouter);
 app.use(errorHandler);
