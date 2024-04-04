@@ -7,7 +7,7 @@ const router = express.Router();
 router.post("/login", signInWithGoogle);
 
 //GETTING USER DATA
-router.get("/user", getUserData);
+router.get("/get", getUserData);
 
 //SIGN OUT
 router.get("/logout", signOut);
