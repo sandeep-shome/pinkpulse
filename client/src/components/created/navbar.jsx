@@ -46,7 +46,7 @@ const Navbar = () => {
   //GETTING USER DATA
   const getUserData = () => {
     axios
-      .get(import.meta.env.VITE_AUTH_URL + "/user", {
+      .get(import.meta.env.VITE_AUTH_URL + "/get", {
         withCredentials: true,
       })
       .then((res) => {
