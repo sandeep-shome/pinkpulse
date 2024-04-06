@@ -8,7 +8,7 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="flex w-full items-center h-[100vh] justify-center flex-col">
+      <div className="flex w-full items-center h-[70vh] lg:h-[100vh] justify-center flex-col">
         <motion.h1
           className="text-pink-400 text-4xl sm:text-3xl lg:text-5xl text-center"
           initial={{ opacity: 0, bottom: "10px" }}
