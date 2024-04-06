@@ -25,8 +25,9 @@ const Periods = () => {
 
   //GET ALL PERIODS
   const getPeriods = () => {
+    const data = JSON.parse(window.localStorage.getItem("userdata"));
     axios
-      .get(import.meta.env.VITE_PERIOD_URL + "/get", {
+      .get(import.meta.env.VITE_PERIOD_URL + "/get/?token=" + data.token, {
         withCredentials: true,
       })
       .then((response) => {
@@ -46,9 +47,10 @@ const Periods = () => {
   const addPeriod = () => {
     setIsLoading(true);
     saveButton.current.setAttribute("disabled", "");
+    const data = JSON.parse(window.localStorage.getItem("userdata"));
     axios
       .post(
-        import.meta.env.VITE_PERIOD_URL + "/add",
+        import.meta.env.VITE_PERIOD_URL + "/add/?token=" + data.token,
         {
           startDate: moment(date[0].startDate).add(1, "day"),
           endDate: moment(date[0].endDate).add(1, "day"),

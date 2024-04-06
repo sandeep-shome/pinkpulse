@@ -45,8 +45,9 @@ const Navbar = () => {
 
   //GETTING USER DATA
   const getUserData = () => {
+    const data = JSON.parse(window.localStorage.getItem("userdata"));
     axios
-      .get(import.meta.env.VITE_AUTH_URL + "/get", {
+      .get(import.meta.env.VITE_AUTH_URL + "/get/?token=" + data.token, {
         withCredentials: true,
       })
       .then((res) => {
