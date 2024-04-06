@@ -71,7 +71,7 @@ const PeriodBox = ({
 
   //REMOVING PERIOD
   const removePeriod = () => {
-    const data = JSON.parse(window.localStorage.getItem("user-data"));
+    const data = JSON.parse(window.localStorage.getItem("userdata"));
     axios
       .delete(
         import.meta.env.VITE_PERIOD_URL +
