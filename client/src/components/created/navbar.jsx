@@ -45,14 +45,16 @@ const Navbar = () => {
 
   //GETTING USER DATA
   const getUserData = () => {
-    const data = JSON.parse(window.localStorage.getItem("userdata"));
-    axios
-      .get(import.meta.env.VITE_AUTH_URL + "/get/?token=" + data.token, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        userContxet.setUser(res.data);
-      });
+    if (localStorage.getItem("userData")) {
+      const data = JSON.parse(window.localStorage.getItem("userdata"));
+      axios
+        .get(import.meta.env.VITE_AUTH_URL + "/get/?token=" + data.token, {
+          withCredentials: true,
+        })
+        .then((res) => {
+          userContxet.setUser(res.data);
+        });
+    }
   };
 
   //SIGN OUT
